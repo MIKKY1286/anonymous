@@ -922,8 +922,8 @@ body {
 /* contact us section  */
 
 .contact-section {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: auto;
     align-items: center;
     padding: 60px 10%;
     background-color: #f7f7f7;
@@ -950,6 +950,13 @@ body {
 .contact-text p {
     font-size: 18px;
     color: #555;
+}
+
+.contact-text .icons {
+    font-size: 32px;
+    margin-top: 15px !important;
+    color: #333;
+    display: none;
 }
 
 .contact-form {
@@ -1015,7 +1022,7 @@ body {
 
 @media (max-width: 768px) {
     .contact-section {
-        flex-direction: column;
+        grid-template-columns: 1fr !important;
         text-align: center;
     }
 
@@ -1026,5 +1033,16 @@ body {
 
     .contact-form {
         max-width: 100%;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .contact-form {
+        display: none;
+    }
+
+    .contact-text .icons {
+        display: block;
     }
 }
