@@ -79,5 +79,17 @@
   "exp_founder_title": "Dídá Mikky Technology",
   "exp_founder_desc": "Mo dá Mikky Technology sílẹ̀ láti kọ́ àwọn ojú-wẹẹbu tó dára jùlọ, databases, ati dashboards fún alabára.",
   "exp_current_title": "Àwọn Iṣẹ́ Lọ́wọ́lọ́wọ́",
-  "exp_current_desc": "Mo ń darí àwọn iṣẹ́ Full Stack ní Mikky Technology, ní lilo React 19, Tailwind v4, ati Firebase."
+  "exp_current_desc": "Mo ń darí àwọn iṣẹ́ Full Stack ní Mikky Technology, ní lilo React 19, Tailwind v4, ati Firebase.",
+  
+  "contact_name": "Orukọ Kikun",
+  "contact_email": "Imeeli Rẹ",
+  "contact_subject": "Koko Ọrọ",
+  "contact_message": "Atọka Ọrọ",
+  "contact_sending": "Gbígbé lọ...",
+  "contact_success": "O ṣeun! A ti fi atọka ọrọ rẹ ránṣẹ́ ni aṣeyọri.",
+  "contact_error": "Ko le fi ránṣẹ́. A ń gbe ọ lọ si WhatsApp...",
+  "contact_placeholder_name": "Tunde Olu",
+  "contact_placeholder_email": "tunde@apere.com",
+  "contact_placeholder_subject": "Ibeere lori iṣẹ wẹẹbu",
+  "contact_placeholder_message": "Sọ fun mi nipa iṣẹ rẹ..."
 }

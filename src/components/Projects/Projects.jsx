@@ -22,7 +22,7 @@ const ProjectsSection = () => {
   return (
     <section 
       id="project" 
-      className="py-24 relative overflow-hidden bg-slate-50 dark:bg-[#090d16] transition-colors duration-300"
+      className="py-24 relative overflow-hidden bg-light dark:bg-[#090d16] transition-colors duration-300"
     >
       <div className="absolute top-1/3 right-1/10 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
 

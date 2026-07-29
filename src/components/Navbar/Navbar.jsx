@@ -132,7 +132,7 @@ const Navbar = () => {
               <LanguageSelector />
               <ThemeToggle />
               <a
-                href="/public/Michael_Oliyide_CV.pdf"
+                href="/Michael_Oliyide_CV.pdf"
                 target="_blank"
                 className="hidden xl:inline-flex px-5 py-2.5 bg-primary text-white font-semibold rounded-full text-sm hover:shadow-[0_8px_20px_-6px_rgba(255,107,107,0.6)] hover:-translate-y-0.5 transition-all cursor-pointer"
               >
@@ -195,7 +195,7 @@ const Navbar = () => {
               </div>
               
               <a
-                href="/public/Michael_Oliyide_CV.pdf"
+                href="/Michael_Oliyide_CV.pdf"
                 target="_blank"
                 className="w-full text-center px-5 py-3 bg-primary text-white font-semibold rounded-full text-sm shadow-md hover:shadow-lg transition-all"
               >

@@ -25,7 +25,7 @@ const ProjectCard = ({ project }) => {
           <div className="absolute inset-0 bg-gradient-to-t from-dark/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
           
           {/* Category Pill Tag */}
-          <span className="absolute top-4 left-4 px-3 py-1 bg-dark/60 backdrop-blur-md text-white rounded-full text-xs font-semibold">
+          <span className="absolute top-4 left-4 px-3 py-1 bg-white/80 dark:bg-dark/80 text-dark dark:text-white border border-slate-200/50 dark:border-slate-800/50 backdrop-blur-md rounded-full text-xs font-bold shadow-sm">
             {project.category}
           </span>
           

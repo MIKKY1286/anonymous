@@ -11,7 +11,7 @@ const Experience = () => {
   return (
     <section 
       id="experience" 
-      className="py-24 relative overflow-hidden bg-slate-50 dark:bg-[#090d16] transition-colors duration-300"
+      className="py-24 relative overflow-hidden bg-light dark:bg-[#090d16] transition-colors duration-300"
     >
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         

@@ -26,7 +26,7 @@ const Services = () => {
   return (
     <section 
       id="services" 
-      className="py-24 relative overflow-hidden bg-slate-50 dark:bg-[#090d16] transition-colors duration-300"
+      className="py-24 relative overflow-hidden bg-light dark:bg-[#090d16] transition-colors duration-300"
     >
       {/* Background glowing circle */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />

@@ -16,7 +16,7 @@ import {
   SiPostman 
 } from 'react-icons/si';
 import { FaCss3Alt } from 'react-icons/fa';
-import { FiCode } from 'react-icons/fi';
+import { FiCode, FiCpu } from 'react-icons/fi';
 
 export const skillsData = {
   Frontend: [
@@ -45,6 +45,7 @@ export const skillsData = {
     { name: 'GitHub', percentage: 90, icon: SiGithub, color: 'text-neutral-800 dark:text-neutral-200' },
     { name: 'VS Code', percentage: 95, icon: FiCode, color: 'text-blue-500' },
     { name: 'Postman', percentage: 80, icon: SiPostman, color: 'text-orange-500' },
+    { name: 'Antigravity ', percentage: 96, icon: FiCpu, color: 'text-primary' },
   ],
 };
 

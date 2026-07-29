@@ -6,7 +6,7 @@ export const Button = ({ children, onClick, type = 'button', variant = 'primary'
   
   const variants = {
     primary: "bg-primary text-white hover:shadow-[0_8px_20px_-6px_rgba(255,107,107,0.6)] shadow-primary/20",
-    secondary: "bg-dark text-white dark:bg-light dark:text-dark hover:shadow-lg",
+    secondary: "bg-white text-dark border border-slate-200 dark:border-transparent dark:bg-dark dark:text-white hover:shadow-lg",
     outline: "border-2 border-dark text-dark dark:border-white dark:text-white bg-transparent hover:bg-dark hover:text-white dark:hover:bg-white dark:hover:text-dark",
     glass: "glass text-dark dark:text-white hover:bg-white/50 dark:hover:bg-dark/50",
   };

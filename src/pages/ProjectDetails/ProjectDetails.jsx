@@ -42,7 +42,7 @@ const ProjectDetails = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="pt-32 pb-24 relative overflow-hidden bg-slate-50 dark:bg-[#090d16] min-h-screen transition-colors duration-300"
+      className="pt-32 pb-24 relative overflow-hidden bg-light dark:bg-[#090d16] min-h-screen transition-colors duration-300"
     >
       <div className="absolute top-10 left-10 w-96 h-96 bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
 

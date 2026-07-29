@@ -79,5 +79,17 @@
   "exp_founder_title": "Fundación de Mikky Technology",
   "exp_founder_desc": "Establecí Mikky Technology para ofrecer diseño web de primer nivel, configuración de bases de datos y paneles interactivos.",
   "exp_current_title": "Proyectos Actuales",
-  "exp_current_desc": "Liderando proyectos Full Stack en Mikky Technology. Creando interfaces interactivas con React 19, Tailwind v4 y Firebase."
+  "exp_current_desc": "Liderando proyectos Full Stack en Mikky Technology. Creando interfaces interactivas con React 19, Tailwind v4 y Firebase.",
+  
+  "contact_name": "Nombre Completo",
+  "contact_email": "Correo Electrónico",
+  "contact_subject": "Asunto",
+  "contact_message": "Mensaje",
+  "contact_sending": "Enviando...",
+  "contact_success": "¡Gracias! Su mensaje ha sido enviado con éxito.",
+  "contact_error": "Error al enviar el mensaje. Redirigiendo a WhatsApp...",
+  "contact_placeholder_name": "Juan Pérez",
+  "contact_placeholder_email": "juan@ejemplo.com",
+  "contact_placeholder_subject": "Consulta de proyecto",
+  "contact_placeholder_message": "Cuéntame sobre tu proyecto..."
 }

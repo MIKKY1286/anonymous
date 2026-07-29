@@ -79,5 +79,17 @@
   "exp_founder_title": "Fondation de Mikky Technology",
   "exp_founder_desc": "Création de Mikky Technology pour fournir des conceptions web haut de gamme, configurations de bases de données et panels d'administration.",
   "exp_current_title": "Activités Actuelles",
-  "exp_current_desc": "Direction de projets Full Stack chez Mikky Technology. Développement d'applications web avec React 19, Tailwind v4 et Firebase."
+  "exp_current_desc": "Direction de projets Full Stack chez Mikky Technology. Développement d'applications web avec React 19, Tailwind v4 et Firebase.",
+  
+  "contact_name": "Nom Complet",
+  "contact_email": "Adresse E-mail",
+  "contact_subject": "Sujet",
+  "contact_message": "Message",
+  "contact_sending": "Envoi...",
+  "contact_success": "Merci ! Votre message a été envoyé avec succès.",
+  "contact_error": "Échec de l'envoi du message. Redirection vers WhatsApp...",
+  "contact_placeholder_name": "Jean Dupont",
+  "contact_placeholder_email": "jean@exemple.com",
+  "contact_placeholder_subject": "Demande de projet",
+  "contact_placeholder_message": "Parlez-moi de votre projet..."
 }

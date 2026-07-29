@@ -36,7 +36,7 @@ const Hero = () => {
   return (
     <section 
       id="home" 
-      className="relative min-h-screen pt-32 pb-16 flex flex-col justify-center overflow-hidden bg-slate-50 dark:bg-[#090d16] transition-colors duration-300"
+      className="relative min-h-screen pt-32 pb-16 flex flex-col justify-center overflow-hidden bg-light dark:bg-[#090d16] transition-colors duration-300"
     >
       {/* Background soft glowing blur elements */}
       <div className="absolute top-1/4 left-1/10 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
@@ -115,9 +115,9 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="relative w-72 h-72 sm:w-96 sm:h-96 rounded-full gradient-bg/10 flex items-center justify-center border border-primary/20"
+            className="relative w-72 h-72 sm:w-96 sm:h-96 rounded-full gradient-bg/10 flex items-center justify-center border border-primary/50"
           >
-            <div className="absolute inset-4 rounded-full border border-dashed border-amber-500/20 animate-spin [animation-duration:40s]" />
+            <div className="absolute inset-4 rounded-full border border-dashed border-amber-500/80 animate-spin [animation-duration:40s]" />
             <img 
               src={heroIllustration} 
               alt="Michael Ayodeji Oliyide" 

@@ -79,5 +79,17 @@
   "exp_founder_title": "Founded Mikky Technology",
   "exp_founder_desc": "Established Mikky Technology to deliver premium, client-focused web design, database configurations, and dashboard systems.",
   "exp_current_title": "Current Ventures",
-  "exp_current_desc": "Leading Full Stack projects at Mikky Technology. Building highly interactive interfaces with React 19, Tailwind v4, and Firebase."
+  "exp_current_desc": "Leading Full Stack projects at Mikky Technology. Building highly interactive interfaces with React 19, Tailwind v4, and Firebase.",
+  
+  "contact_name": "Full Name",
+  "contact_email": "Email Address",
+  "contact_subject": "Subject",
+  "contact_message": "Message",
+  "contact_sending": "Sending...",
+  "contact_success": "Thank you! Your message has been sent successfully.",
+  "contact_error": "Failed to send message. Redirecting to WhatsApp...",
+  "contact_placeholder_name": "John Doe",
+  "contact_placeholder_email": "john@example.com",
+  "contact_placeholder_subject": "Project inquiry",
+  "contact_placeholder_message": "Tell me about your project..."
 }

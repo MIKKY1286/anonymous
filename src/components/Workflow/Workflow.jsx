@@ -129,7 +129,7 @@ const Workflow = () => {
                   <Icon size={24} />
                   
                   {/* Step Number Tag */}
-                  <span className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-dark text-white dark:bg-light dark:text-dark text-[10px] font-black flex items-center justify-center shadow-md">
+                  <span className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-white text-dark border border-slate-250 dark:border-transparent dark:bg-dark dark:text-light text-[10px] font-black flex items-center justify-center shadow-md">
                     {step.id}
                   </span>
                 </div>
