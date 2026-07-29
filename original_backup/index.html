@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonymous Portfolio | Michael Oliyide – Mikky Technology</title>
+    <meta name="description" content="Michael Ayodeji Oliyide – CEO of Mikky Technology. Expert web developer creating modern, user-friendly websites. View portfolio, skills, and projects.">
+
+    <!-- Google Fonts: multiple fonts for visual richness -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;600;700&family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./image/web-developer-digital-avatar.jpg" type="image/x-icon">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- Extra styles for new sections -->
+    <style>
+        /* === LANGUAGE SELECTOR === */
+        .lang-select {
+            background: rgba(255,255,255,0.15);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.4);
+            border-radius: 20px;
+            padding: 6px 14px;
+            font-size: 13px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s;
+            outline: none;
+        }
+        .lang-select:hover { background: rgba(255,255,255,0.25); }
+        .lang-select option { color: #111; background: #fff; }
+
+        /* === WORKFLOW / PROCESS SECTION === */
+        .workflow {
+            padding: 90px 10%;
+            background: linear-gradient(135deg, #f3f3f3, #e8e8e8);
+            text-align: center;
+        }
+        .workflow-header { margin-bottom: 60px; }
+        .workflow-header .pill-label {
+            display: inline-block;
+            background: #111;
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+            margin-bottom: 14px;
+        }
+        .workflow-header h2 {
+            font-size: 34px;
+            font-family: 'Playfair Display', serif;
+            color: #222;
+            margin-bottom: 12px;
+        }
+        .workflow-header p { color: #555; font-size: 16px; max-width: 520px; margin: 0 auto; }
+
+        .workflow-steps {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 0;
+            flex-wrap: wrap;
+            position: relative;
+        }
+        .workflow-step {
+            flex: 1;
+            min-width: 160px;
+            max-width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            padding: 0 10px;
+        }
+        /* Connector line between steps */
+        .workflow-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 32px;
+            right: -20px;
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, #f0a500, #ff7b00);
+            z-index: 1;
+        }
+        .step-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff7b00, #f0a500);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            color: white;
+            margin-bottom: 18px;
+            box-shadow: 0 8px 20px rgba(255,123,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: floatUpDown 3s ease-in-out infinite;
+            position: relative;
+            z-index: 2;
+        }
+        .workflow-step:nth-child(2) .step-icon { animation-delay: 0.4s; }
+        .workflow-step:nth-child(3) .step-icon { animation-delay: 0.8s; }
+        .workflow-step:nth-child(4) .step-icon { animation-delay: 1.2s; }
+        .workflow-step:nth-child(5) .step-icon { animation-delay: 1.6s; }
+        .step-icon:hover { transform: scale(1.15) translateY(-5px); box-shadow: 0 14px 30px rgba(255,123,0,0.45); }
+        .step-number {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            width: 22px;
+            height: 22px;
+            background: #111;
+            color: white;
+            border-radius: 50%;
+            font-size: 11px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .step-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 6px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .step-desc { font-size: 13px; color: #666; line-height: 1.5; }
+
+        @media (max-width: 768px) {
+            .workflow-steps { flex-direction: column; align-items: center; gap: 40px; }
+            .workflow-step:not(:last-child)::after {
+                top: auto;
+                bottom: -22px;
+                right: 50%;
+                width: 2px;
+                height: 40px;
+                transform: translateX(50%);
+            }
+        }
+
+        /* === TESTIMONIAL SLIDER FIX === */
+        .testimonial-slider { overflow: hidden; }
+        .testimonial-cards {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .testimonial-card { min-width: 300px; flex-shrink: 0; }
+
+        /* === FOOTER === */
+        .site-footer {
+            background: #111;
+            color: rgba(255,255,255,0.7);
+            padding: 40px 10% 20px;
+            font-family: 'Inter', sans-serif;
+        }
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .footer-brand .logo-text {
+            font-family: 'Pacifico', cursive;
+            font-size: 22px;
+            color: white;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .footer-brand p { font-size: 13px; max-width: 220px; line-height: 1.6; }
+        .footer-links h4 {
+            color: white;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            font-family: 'Poppins', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .footer-links ul { list-style: none; padding: 0; }
+        .footer-links ul li { margin-bottom: 8px; }
+        .footer-links ul li a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s;
+        }
+        .footer-links ul li a:hover { color: #f0a500; }
+        .footer-socials a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: rgba(255,255,255,0.7);
+            font-size: 18px;
+            margin-right: 8px;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        .footer-socials a:hover { border-color: #f0a500; color: #f0a500; transform: translateY(-3px); }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-size: 12px;
+        }
+        .footer-bottom a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.3s; }
+        .footer-bottom a:hover { color: #f0a500; }
+        .footer-bottom-links { display: flex; gap: 20px; }
+
+        /* === SCROLL TO TOP BUTTON === */
+        #scrollTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 46px;
+            height: 46px;
+            background: linear-gradient(135deg, #ff7b00, #f0a500);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 22px;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(255,123,0,0.4);
+            z-index: 999;
+            transition: all 0.3s;
+        }
+        #scrollTop:hover { transform: translateY(-4px); }
+
+        /* === CONTACT FORM FIX === */
+        .contact-form form { display: flex; flex-direction: column; gap: 15px; }
+
+        /* === PROJECT GALLERY – remove the broken animation === */
+        .projects-gallery { opacity: 1; animation: none; }
+
+        /* === ABOUT SECTION avatar fix === */
+        .about-avatar img { object-fit: cover; }
+    </style>
+</head>
+
+<body id="home">
+
+    <!-- ===================== HERO SECTION ===================== -->
+    <section class="hero" style="background: url('./image/WhatsApp_Image-removebg-preview.png') right center/contain no-repeat, linear-gradient(135deg,#111 60%,#1a1a2e 100%);">
+
+        <!-- NAVBAR -->
+        <nav class="navbar">
+            <div class="logo">Anonymous</div>
+
+            <ul class="nav-links">
+                <li><a href="#home" data-i18n="nav_home">Home</a></li>
+                <li><a href="#about" data-i18n="nav_about">About</a></li>
+                <li><a href="#project" data-i18n="nav_projects">Projects</a></li>
+                <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-buttons" style="display:flex;align-items:center;gap:12px;">
+                <!-- Language Selector -->
+                <select id="lang-select" class="lang-select" onchange="changeLanguage(this.value)" aria-label="Select language">
+                    <option value="en">🌐 English</option>
+                    <option value="es">🌐 Español</option>
+                    <option value="fr">🌐 Français</option>
+                    <option value="yo">🌐 Yorùbá</option>
+                </select>
+                <a class="nav-buttons-1" href="#contact" data-i18n="nav_contact_me">Contact Me</a>
+                <a class="nav-buttons-2" href="./resume/Michael_Oliyide_CV .pdf" target="_blank" data-i18n="btn_resume">Resume</a>
+            </div>
+        </nav>
+
+        <!-- HERO CONTENT -->
+        <div class="hero-content">
+            <div class="hero-left">
+                <div class="pill-card">
+                    <img src="./image/web-developer-digital-avatar.jpg" alt="Michael">
+                    <span>Michael Ayodeji Oliyide</span>
+                </div>
+                <h1 data-i18n="hero_title">Crafting Beautiful <br><span style="color:#f0a500;">Web Experiences</span></h1>
+                <p data-i18n="hero_desc">Hi, I'm Michael, CEO of Mikky Technology. I create modern, user-friendly websites that elevate businesses using the latest technologies.</p>
+                <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                    <a href="#contact" class="cta-btn" data-i18n="btn_touch">Get In Touch</a>
+                    <a href="./resume/Michael_Oliyide_CV .pdf" target="_blank" class="cta-btn" style="background:transparent;color:white;border:2px solid white;" data-i18n="btn_resume">Download Resume</a>
+                </div>
+            </div>
+
+            <div class="hero-right" style="position:relative;">
+                <!-- Floating testimonial badge cards -->
+                <div class="floating-cards">
+                    <div class="floating-card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBRD6Mlr2PmOBmJqfuPppH9PRA2lNZO2D7zA&s" alt="Client">
+                        <span style="font-size:12px;font-weight:600;">"Top-notch!"</span>
+                    </div>
+                    <div class="floating-card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2WWJEImdtBVeLhMDBgSTAfvvju5KltNqo2A&s" alt="Client">
+                        <span style="font-size:12px;font-weight:600;">"Great work!"</span>
+                    </div>
+                    <div class="floating-card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1lAmPoJQMdU7UfYDg3nea3yE4frdL8IXmog&s" alt="Client">
+                        <span style="font-size:12px;font-weight:600;">"Exceptional!"</span>
+                    </div>
+                    <div class="floating-card">
+                        <i class='bx bxl-javascript' style="font-size:28px;color:#f7df1e;margin-right:8px;"></i>
+                        <span style="font-size:12px;font-weight:600;">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===================== ABOUT SECTION ===================== -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-avatar">
+                <img src="./image/web-developer-digital-avatar.jpg" alt="Michael Oliyide – Web Developer">
+            </div>
+            <div class="about-content">
+                <h2 data-i18n="about_title" style="font-family:'Playfair Display',serif;">About Me</h2>
+                <p data-i18n="about_desc">I am a passionate web developer with extensive experience in HTML, CSS, JavaScript, React, and Node.js. I love creating modern, responsive, and interactive websites that solve real-world problems and help businesses grow.</p>
+                <ul>
+                    <li data-i18n="about_li1">5+ years of web development experience</li>
+                    <li data-i18n="about_li2">Worked with 6+ clients globally</li>
+                    <li data-i18n="about_li3">CEO of Mikky Technology</li>
+                    <li data-i18n="about_li4">Passionate about clean code & UI/UX design</li>
+                </ul>
+                <a href="./resume/Michael_Oliyide_CV .pdf" target="_blank" class="btn" data-i18n="btn_resume">Download Resume</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===================== SKILLS SECTION (original) ===================== -->
+    <section class="skills">
+        <h2 data-i18n="skills_title" style="font-family:'Playfair Display',serif;">My Core Skills</h2>
+        <div class="skills-container">
+            <div class="skill">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML5">
+                <div class="skill-bar html"></div>
+                <p>HTML5</p>
+            </div>
+            <div class="skill">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS3">
+                <div class="skill-bar css"></div>
+                <p>CSS3</p>
+            </div>
+            <div class="skill">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript">
+                <div class="skill-bar js"></div>
+                <p>JavaScript</p>
+            </div>
+            <div class="skill">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React">
+                <div class="skill-bar" style="width:65%;background:#61dafb;"></div>
+                <p>React JS</p>
+            </div>
+            <div class="skill">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" alt="Node.js" style="background:#fff;border-radius:4px;padding:2px;">
+                <div class="skill-bar" style="width:60%;background:#68a063;"></div>
+                <p>Node.js</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===================== SKILLS & TECHNOLOGY SECTION ===================== -->
+    <section class="skills-section" id="skills">
+        <div class="skills-container">
+            <div class="skills-text">
+                <span class="skills-label" data-i18n="skills_label">Skills &amp; Technologies</span>
+                <h2 style="font-family:'Playfair Display',serif;" data-i18n="skills_title2">My Technical Proficiency</h2>
+                <p data-i18n="skills_desc">I specialize in building modern, responsive, and interactive web experiences using the latest technologies.</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML">
+                    <span>HTML5</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS">
+                    <span>CSS3</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript">
+                    <span>JavaScript</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React">
+                    <span>React JS</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" alt="Node.js" style="background:#f3f3f3;border-radius:4px;padding:3px;">
+                    <span>Node.js</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Tailwind_CSS_Logo.svg" alt="Tailwind">
+                    <span>Tailwind</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="Firebase">
+                    <span>Firebase</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg" alt="GitHub" style="filter:invert(1) brightness(0.2);">
+                    <span>GitHub</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===================== WORKFLOW / PROCESS SECTION (NEW) ===================== -->
+    <section class="workflow" id="workflow">
+        <div class="workflow-header">
+            <div class="pill-label" data-i18n="workflow_label">My Process</div>
+            <h2 data-i18n="workflow_title">How I Build Your Project</h2>
+            <p data-i18n="workflow_desc">From discovery to deployment, every project follows a clear, structured workflow to ensure outstanding results.</p>
+        </div>
+
+        <div class="workflow-steps">
+            <div class="workflow-step">
+                <div class="step-icon">
+                    <i class='bx bx-search-alt'></i>
+                    <span class="step-number">1</span>
+                </div>
+                <div class="step-title" data-i18n="step1_title">Discovery</div>
+                <div class="step-desc" data-i18n="step1_desc">Understanding your goals, audience, and requirements in depth.</div>
+            </div>
+
+            <div class="workflow-step">
+                <div class="step-icon">
+                    <i class='bx bx-pencil'></i>
+                    <span class="step-number">2</span>
+                </div>
+                <div class="step-title" data-i18n="step2_title">Design</div>
+                <div class="step-desc" data-i18n="step2_desc">Crafting beautiful wireframes and prototypes that wow.</div>
+            </div>
+
+            <div class="workflow-step">
+                <div class="step-icon">
+                    <i class='bx bx-code-alt'></i>
+                    <span class="step-number">3</span>
+                </div>
+                <div class="step-title" data-i18n="step3_title">Development</div>
+                <div class="step-desc" data-i18n="step3_desc">Building with clean, scalable, and performant code.</div>
+            </div>
+
+            <div class="workflow-step">
+                <div class="step-icon">
+                    <i class='bx bx-bug-alt'></i>
+                    <span class="step-number">4</span>
+                </div>
+                <div class="step-title" data-i18n="step4_title">Testing</div>
+                <div class="step-desc" data-i18n="step4_desc">Thorough QA across all devices and browsers.</div>
+            </div>
+
+            <div class="workflow-step">
+                <div class="step-icon">
+                    <i class='bx bx-rocket'></i>
+                    <span class="step-number">5</span>
+                </div>
+                <div class="step-title" data-i18n="step5_title">Launch</div>
+                <div class="step-desc" data-i18n="step5_desc">Deploying live with ongoing support and updates.</div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===================== TESTIMONIALS SECTION ===================== -->
+    <section class="testimonials">
+        <h2 data-i18n="testimonials_title" style="font-family:'Playfair Display',serif;">What People Say</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial-cards">
+                <div class="testimonial-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBRD6Mlr2PmOBmJqfuPppH9PRA2lNZO2D7zA&s" alt="John Doe">
+                    <h3>John Doe</h3>
+                    <p>"Amazing work! Highly recommend. The attention to detail was exceptional and the delivery was on time."</p>
+                    <span>Web Developer</span>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2WWJEImdtBVeLhMDBgSTAfvvju5KltNqo2A&s" alt="Jane Smith">
+                    <h3>Jane Smith</h3>
+                    <p>"A true professional, delivered on time and exceeded expectations. My business has grown significantly since the website launch."</p>
+                    <span>UI/UX Designer</span>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1lAmPoJQMdU7UfYDg3nea3yE4frdL8IXmog&s" alt="Sarah Connor">
+                    <h3>Sarah Connor</h3>
+                    <p>"The website transformed our business. Exceptional creativity and technical skills. Highly recommend to anyone!"</p>
+                    <span>Business Owner</span>
+                </div>
+            </div>
+        </div>
+        <!-- Slider dots -->
+        <div style="text-align:center;margin-top:20px;display:flex;justify-content:center;gap:8px;" id="slider-dots">
+            <button class="dot-btn active" onclick="goToSlide(0)" aria-label="Slide 1"></button>
+            <button class="dot-btn" onclick="goToSlide(1)" aria-label="Slide 2"></button>
+            <button class="dot-btn" onclick="goToSlide(2)" aria-label="Slide 3"></button>
+        </div>
+        <style>
+            .dot-btn{width:10px;height:10px;border-radius:50%;border:none;background:#ccc;cursor:pointer;padding:0;transition:background .3s,transform .3s;}
+            .dot-btn.active{background:#ff7b00;transform:scale(1.3);}
+        </style>
+    </section>
+
+
+    <!-- ===================== FEATURED PROJECTS SECTION ===================== -->
+    <section id="project" class="projects">
+        <div class="projects-container" style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:40px;justify-content:center;padding:0;">
+            <div class="projects-text">
+                <span class="pill" data-i18n="projects_pill">💡 Featured Work</span>
+                <h2 style="font-family:'Playfair Display',serif;" data-i18n="projects_title">Recent Projects</h2>
+                <p data-i18n="projects_desc">Explore some of my latest projects, designed to push the boundaries of creativity and functionality.</p>
+                <a href="https://mikky-technology.vercel.app/about%20us/project.html" target="_blank" class="btn" data-i18n="view_all">View All Projects</a>
+            </div>
+            <div class="projects-gallery">
+                <div class="project-card" onclick="window.open('https://y-combinator-usuq.vercel.app','_blank')" style="cursor:pointer;">
+                    <img src="./image/Screenshot 2025-02-03 205415.png" alt="Y Combinator Clone">
+                    <div class="overlay" style="position:absolute;inset:0;background:rgba(0,0,0,0.6);opacity:0;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .3s;border-radius:10px;">
+                        <h3 style="color:white;margin:0 0 6px;">Y Combinator Clone</h3>
+                        <p style="color:#ddd;font-size:13px;margin:0;">Frontend Development</p>
+                    </div>
+                </div>
+                <div class="project-card" onclick="window.open('https://sqi-project.vercel.app','_blank')" style="cursor:pointer;">
+                    <img src="./image/Screenshot 2025-02-03 205450.png" alt="SQI College Clone">
+                    <div class="overlay" style="position:absolute;inset:0;background:rgba(0,0,0,0.6);opacity:0;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .3s;border-radius:10px;">
+                        <h3 style="color:white;margin:0 0 6px;">SQI College Clone</h3>
+                        <p style="color:#ddd;font-size:13px;margin:0;">Educational Platform</p>
+                    </div>
+                </div>
+                <div class="project-card" onclick="window.open('https://zenith-project.vercel.app','_blank')" style="cursor:pointer;">
+                    <img src="./image/Screenshot 2025-02-03 205552.png" alt="Zenith Bank Clone">
+                    <div class="overlay" style="position:absolute;inset:0;background:rgba(0,0,0,0.6);opacity:0;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .3s;border-radius:10px;">
+                        <h3 style="color:white;margin:0 0 6px;">Zenith Bank Clone</h3>
+                        <p style="color:#ddd;font-size:13px;margin:0;">Fintech Interface</p>
+                    </div>
+                </div>
+                <div class="project-card" style="cursor:pointer;">
+                    <img src="./image/Screenshot 2025-02-04 082909.png" alt="Portfolio Website">
+                    <div class="overlay" style="position:absolute;inset:0;background:rgba(0,0,0,0.6);opacity:0;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .3s;border-radius:10px;">
+                        <h3 style="color:white;margin:0 0 6px;">Portfolio Website</h3>
+                        <p style="color:#ddd;font-size:13px;margin:0;">Custom Web Design</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project card hover overlay fix -->
+    <style>
+        .project-card { position: relative; overflow: hidden; border-radius: 10px; }
+        .project-card:hover .overlay { opacity: 1 !important; }
+        .projects-gallery { animation: none; opacity: 1; }
+    </style>
+
+
+    <!-- ===================== CALL TO ACTION ===================== -->
+    <section class="cta">
+        <div class="cta-content">
+            <h2 data-i18n="cta_title" style="font-family:'Playfair Display',serif;">Let's Create Something Amazing Together!</h2>
+            <p data-i18n="cta_desc">Have an idea? Let's discuss and build something great.</p>
+            <a href="#contact" class="cta-btn" data-i18n="btn_touch">Get in Touch</a>
+        </div>
+    </section>
+
+
+    <!-- ===================== CONTACT SECTION ===================== -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-text">
+                <span class="skills-label" data-i18n="contact_label">Contact &amp; Information</span>
+                <h2 style="font-family:'Playfair Display',serif;" data-i18n="contact_title">Get In Touch</h2>
+                <p data-i18n="contact_desc">Feel free to reach out for any inquiries or collaborations!</p>
+                <div class="icons">
+                    <a href="https://wa.me/2347083034571"><i class='bx bxl-whatsapp' style='color:#40e011'></i></a>
+                    <a href="tel:+2347083034571"><i class='bx bxs-phone-call' style='color:#111fe0'></i></a>
+                    <a href="https://instagram.com/oliyidemikky"><i class='bx bxl-instagram' style='color:#e011b6'></i></a>
+                    <a href="https://facebook.com/oliyidemikkyn"><i class='bx bxl-facebook' style='color:#111fe0'></i></a>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form id="contact-form" onsubmit="sendToWhatsapp(event)">
+                    <div class="form-row">
+                        <input type="text" id="cf-name" placeholder="Your Name" required>
+                        <input type="email" id="cf-email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" id="cf-subject" placeholder="Subject" required>
+                        <input type="tel" id="cf-phone" placeholder="Phone Number">
+                    </div>
+                    <textarea id="cf-message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" data-i18n="btn_send">Send via WhatsApp &nbsp;<i class='bx bxl-whatsapp'></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <span class="logo-text">Anonymous</span>
+                <p>CEO of Mikky Technology. Building modern web experiences that elevate businesses.</p>
+                <div class="footer-socials" style="margin-top:16px;">
+                    <a href="https://wa.me/2347083034571" title="WhatsApp"><i class='bx bxl-whatsapp'></i></a>
+                    <a href="https://instagram.com/oliyidemikky" title="Instagram"><i class='bx bxl-instagram'></i></a>
+                    <a href="https://facebook.com/oliyidemikkyn" title="Facebook"><i class='bx bxl-facebook'></i></a>
+                    <a href="https://github.com" title="GitHub"><i class='bx bxl-github'></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#home" data-i18n="nav_home">Home</a></li>
+                    <li><a href="#about" data-i18n="nav_about">About</a></li>
+                    <li><a href="#project" data-i18n="nav_projects">Projects</a></li>
+                    <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="./resume/Michael_Oliyide_CV .pdf" target="_blank" data-i18n="btn_resume">Resume / CV</a></li>
+                    <li><a href="https://mikky-technology.vercel.app/about%20us/project.html" target="_blank">All Projects</a></li>
+                    <li><a href="#workflow" data-i18n="workflow_label">My Process</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="https://mikky-technology.vercel.app/privacy-and-terms/privacy-and-terms.html" target="_blank">Privacy Policy</a></li>
+                    <li><a href="https://mikky-technology.vercel.app/privacy-and-terms/privacy-and-terms.html" target="_blank">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>&copy; 2026 Mikky Technology. All rights reserved.</span>
+            <div class="footer-bottom-links">
+                <a href="https://mikky-technology.vercel.app/privacy-and-terms/privacy-and-terms.html" target="_blank">Privacy</a>
+                <a href="https://mikky-technology.vercel.app/privacy-and-terms/privacy-and-terms.html" target="_blank">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Scroll to top button -->
+    <button id="scrollTop" onclick="scrollToTop()" title="Back to top">
+        <i class='bx bx-up-arrow-alt'></i>
+    </button>
+
+
+    <!-- ===================== SCRIPTS ===================== -->
+    <script>
+    // ─── TESTIMONIAL SLIDER ──────────────────────────────────────────────────
+    let currentSlide = 0;
+    const cards = document.querySelector('.testimonial-cards');
+    const dots = document.querySelectorAll('.dot-btn');
+    const totalSlides = document.querySelectorAll('.testimonial-card').length;
+
+    function goToSlide(index) {
+        currentSlide = index;
+        const cardWidth = document.querySelector('.testimonial-card').offsetWidth + 20;
+        cards.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
+        dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+    }
+
+    setInterval(() => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        goToSlide(currentSlide);
+    }, 4000);
+
+
+    // ─── SKILLS SECTION REVEAL ON SCROLL ────────────────────────────────────
+    document.addEventListener('DOMContentLoaded', function () {
+        const skillsSec = document.querySelector('.skills-section');
+        function revealSkills() {
+            if (!skillsSec) return;
+            if (skillsSec.getBoundingClientRect().top < window.innerHeight / 1.2) {
+                skillsSec.classList.add('visible');
+            }
+        }
+        window.addEventListener('scroll', revealSkills);
+        revealSkills();
+    });
+
+
+    // ─── WHATSAPP FORM ───────────────────────────────────────────────────────
+    function sendToWhatsapp(e) {
+        e.preventDefault();
+        const name    = document.getElementById('cf-name').value.trim();
+        const email   = document.getElementById('cf-email').value.trim();
+        const subject = document.getElementById('cf-subject').value.trim();
+        const phone   = document.getElementById('cf-phone').value.trim();
+        const message = document.getElementById('cf-message').value.trim();
+
+        const phoneNumber = '2349075793786';
+        const text = encodeURIComponent(
+            `*New Inquiry from Portfolio Website*\n\n` +
+            `*Name:* ${name}\n` +
+            `*Email:* ${email}\n` +
+            `*Phone:* ${phone || 'Not provided'}\n` +
+            `*Subject:* ${subject}\n` +
+            `*Message:* ${message}`
+        );
+        window.open(`https://wa.me/${phoneNumber}?text=${text}`, '_blank');
+    }
+
+
+    // ─── SCROLL TO TOP ───────────────────────────────────────────────────────
+    const scrollBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+        scrollBtn.style.display = window.scrollY > 400 ? 'flex' : 'none';
+    });
+    function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
+
+    // ─── MULTI-LANGUAGE SUPPORT ──────────────────────────────────────────────
+    const translations = {
+        en: {
+            nav_home: 'Home', nav_about: 'About', nav_projects: 'Projects',
+            nav_contact: 'Contact', nav_contact_me: 'Contact Me',
+            btn_resume: 'Resume', btn_touch: 'Get In Touch', btn_send: 'Send via WhatsApp',
+            hero_title: 'Crafting Beautiful Web Experiences',
+            hero_desc: "Hi, I'm Michael, CEO of Mikky Technology. I create modern, user-friendly websites that elevate businesses using the latest technologies.",
+            about_title: 'About Me',
+            about_desc: 'I am a passionate web developer with extensive experience in HTML, CSS, JavaScript, React, and Node.js. I love creating modern, responsive, and interactive websites that solve real-world problems.',
+            about_li1: '5+ years of web development experience',
+            about_li2: 'Worked with 6+ clients globally',
+            about_li3: 'CEO of Mikky Technology',
+            about_li4: 'Passionate about clean code & UI/UX design',
+            skills_title: 'My Core Skills', skills_title2: 'My Technical Proficiency',
+            skills_label: 'Skills & Technologies',
+            skills_desc: 'I specialize in building modern, responsive, and interactive web experiences using the latest technologies.',
+            workflow_label: 'My Process', workflow_title: 'How I Build Your Project',
+            workflow_desc: 'From discovery to deployment, every project follows a clear, structured workflow to ensure outstanding results.',
+            step1_title: 'Discovery', step1_desc: 'Understanding your goals, audience, and requirements in depth.',
+            step2_title: 'Design', step2_desc: 'Crafting beautiful wireframes and prototypes that wow.',
+            step3_title: 'Development', step3_desc: 'Building with clean, scalable, and performant code.',
+            step4_title: 'Testing', step4_desc: 'Thorough QA across all devices and browsers.',
+            step5_title: 'Launch', step5_desc: 'Deploying live with ongoing support and updates.',
+            testimonials_title: 'What People Say',
+            projects_pill: '💡 Featured Work', projects_title: 'Recent Projects',
+            projects_desc: 'Explore some of my latest projects, designed to push the boundaries of creativity and functionality.',
+            view_all: 'View All Projects',
+            cta_title: "Let's Create Something Amazing Together!",
+            cta_desc: 'Have an idea? Let\'s discuss and build something great.',
+            contact_label: 'Contact & Information', contact_title: 'Get In Touch',
+            contact_desc: 'Feel free to reach out for any inquiries or collaborations!'
+        },
+        es: {
+            nav_home: 'Inicio', nav_about: 'Sobre Mí', nav_projects: 'Proyectos',
+            nav_contact: 'Contacto', nav_contact_me: 'Contáctame',
+            btn_resume: 'Currículum', btn_touch: 'Contáctame', btn_send: 'Enviar por WhatsApp',
+            hero_title: 'Creando Hermosas Experiencias Web',
+            hero_desc: 'Hola, soy Michael, CEO de Mikky Technology. Creo sitios web modernos y fáciles de usar que elevan los negocios.',
+            about_title: 'Sobre Mí',
+            about_desc: 'Soy un desarrollador web apasionado con amplia experiencia en HTML, CSS, JavaScript, React y Node.js.',
+            about_li1: 'Más de 5 años de experiencia',
+            about_li2: 'Trabajé con más de 6 clientes globalmente',
+            about_li3: 'CEO de Mikky Technology',
+            about_li4: 'Apasionado por el código limpio y el diseño UI/UX',
+            skills_title: 'Mis Habilidades', skills_title2: 'Mi Competencia Técnica',
+            skills_label: 'Habilidades y Tecnologías',
+            skills_desc: 'Me especializo en crear experiencias web modernas, responsivas e interactivas.',
+            workflow_label: 'Mi Proceso', workflow_title: 'Cómo Construyo Tu Proyecto',
+            workflow_desc: 'Desde el descubrimiento hasta el lanzamiento, cada proyecto sigue un flujo de trabajo claro.',
+            step1_title: 'Descubrimiento', step1_desc: 'Entender sus objetivos y requisitos a fondo.',
+            step2_title: 'Diseño', step2_desc: 'Creando wireframes y prototipos impresionantes.',
+            step3_title: 'Desarrollo', step3_desc: 'Construyendo con código limpio y escalable.',
+            step4_title: 'Pruebas', step4_desc: 'QA exhaustivo en todos los dispositivos y navegadores.',
+            step5_title: 'Lanzamiento', step5_desc: 'Desplegando en vivo con soporte continuo.',
+            testimonials_title: 'Lo Que Dicen',
+            projects_pill: '💡 Trabajo Destacado', projects_title: 'Proyectos Recientes',
+            projects_desc: 'Explore algunos de mis últimos proyectos.',
+            view_all: 'Ver Todos los Proyectos',
+            cta_title: '¡Creemos Algo Increíble Juntos!',
+            cta_desc: '¿Tienes una idea? Discutamos y construyamos algo grandioso.',
+            contact_label: 'Contacto e Información', contact_title: 'Contáctame',
+            contact_desc: '¡No dudes en comunicarte para cualquier consulta o colaboración!'
+        },
+        fr: {
+            nav_home: 'Accueil', nav_about: 'À Propos', nav_projects: 'Projets',
+            nav_contact: 'Contact', nav_contact_me: 'Me Contacter',
+            btn_resume: 'CV', btn_touch: 'Me Contacter', btn_send: 'Envoyer par WhatsApp',
+            hero_title: 'Créer de Belles Expériences Web',
+            hero_desc: 'Salut, je suis Michael, PDG de Mikky Technology. Je crée des sites web modernes et conviviaux.',
+            about_title: 'À Propos de Moi',
+            about_desc: 'Je suis un développeur web passionné avec une vaste expérience en HTML, CSS, JavaScript, React et Node.js.',
+            about_li1: 'Plus de 5 ans d\'expérience',
+            about_li2: 'Travaillé avec plus de 6 clients mondiaux',
+            about_li3: 'PDG de Mikky Technology',
+            about_li4: 'Passionné par le code propre et la conception UI/UX',
+            skills_title: 'Mes Compétences', skills_title2: 'Compétences Techniques',
+            skills_label: 'Compétences et Technologies',
+            skills_desc: 'Je me spécialise dans la création d\'expériences web modernes, responsives et interactives.',
+            workflow_label: 'Mon Processus', workflow_title: 'Comment Je Construis Votre Projet',
+            workflow_desc: 'De la découverte au déploiement, chaque projet suit un flux de travail clair.',
+            step1_title: 'Découverte', step1_desc: 'Comprendre vos objectifs et exigences en profondeur.',
+            step2_title: 'Design', step2_desc: 'Créer de magnifiques wireframes et prototypes.',
+            step3_title: 'Développement', step3_desc: 'Construire avec un code propre et évolutif.',
+            step4_title: 'Tests', step4_desc: 'QA approfondie sur tous les appareils et navigateurs.',
+            step5_title: 'Lancement', step5_desc: 'Déploiement en direct avec support continu.',
+            testimonials_title: 'Témoignages',
+            projects_pill: '💡 Travail Récent', projects_title: 'Projets Récents',
+            projects_desc: 'Explorez certains de mes derniers projets.',
+            view_all: 'Voir Tous les Projets',
+            cta_title: 'Créons Quelque Chose d\'Incroyable Ensemble!',
+            cta_desc: 'Vous avez une idée? Discutons et construisons quelque chose de génial.',
+            contact_label: 'Contact et Information', contact_title: 'Me Contacter',
+            contact_desc: 'N\'hésitez pas à me contacter pour toute demande ou collaboration!'
+        },
+        yo: {
+            nav_home: 'Ilé', nav_about: 'Nípa Mi', nav_projects: 'Iṣẹ́',
+            nav_contact: 'Kan sí mi', nav_contact_me: 'Kan Sí Mi',
+            btn_resume: 'Ìwé Ìròyìn', btn_touch: 'Bá Mi Sọ̀rọ̀', btn_send: 'Firanṣẹ̀ nipasẹ WhatsApp',
+            hero_title: 'Ṣíṣe Àwọn Ojú-òpó Wẹẹbu Tó Ṣe Àdánwò',
+            hero_desc: 'Mo jẹ́ Michael, Alákóso Mikky Technology. Mo ń dá ojú-òpó wẹẹbu tí ó tayọ fún àwọn iṣẹ́.',
+            about_title: 'Nípa Mi',
+            about_desc: 'Mí jẹ́ olùgbéjáde wẹẹbu tó nífẹ̀ẹ́ sí iṣẹ́ rẹ̀ pẹ̀lú ìmọ̀ gbooro nínú HTML, CSS, JavaScript, React àti Node.js.',
+            about_li1: 'Ọdún 5+ ti ìrírí',
+            about_li2: 'Ṣiṣẹ́ pẹ̀lú àwọn alabára mẹ́fà+ káàkiri àgbáyé',
+            about_li3: 'Alákóso Mikky Technology',
+            about_li4: 'Ìfẹ́ sí kóòdù mímọ́ àti àpẹrẹ UI/UX',
+            skills_title: 'Àwọn Ìmọ̀ Mi', skills_title2: 'Ìmọ̀ Ẹ̀rọ Mi',
+            skills_label: 'Àwọn Ìmọ̀ àti Ẹ̀rọ',
+            skills_desc: 'Mo ń kópa nínú ṣíṣe àwọn ojú-òpó wẹẹbu òde-òní, tó ń dáhùn, àti tó fani mọ́ra.',
+            workflow_label: 'Ọ̀nà Mi', workflow_title: 'Bí Mo Ṣe Ń Kọ́ Iṣẹ́ Rẹ',
+            workflow_desc: 'Láti ìwádìí títí dé ìgbékalẹ̀, iṣẹ́ kọ̀ọ̀kan tẹ̀lé ọ̀nà tó ṣe kedere.',
+            step1_title: 'Ìwádìí', step1_desc: 'Lílo àkókò láti mọ àwọn èrò àti àwọn ibi-afẹ́dẹ̀ rẹ.',
+            step2_title: 'Àpẹrẹ', step2_desc: 'Ṣíṣe àwọn àpẹrẹ tó lárinrin.',
+            step3_title: 'Ìdàgbàsókè', step3_desc: 'Kíkọ́ pẹ̀lú kóòdù mímọ́ àti alágbára.',
+            step4_title: 'Ìdánwò', step4_desc: 'QA tó ṣe kedere lórí gbogbo àwọn ẹ̀rọ.',
+            step5_title: 'Ìgbéjáde', step5_desc: 'Gbígbé jáde tí ó tẹ̀lé pẹ̀lú àtìlẹ́yìn.',
+            testimonials_title: 'Ohun Tí Àwọn Ènìyàn Sọ',
+            projects_pill: '💡 Iṣẹ́ Tó Kẹ́yìn', projects_title: 'Àwọn Iṣẹ́ Tuntun',
+            projects_desc: 'Ṣàwárí àwọn iṣẹ́ tuntun mi.',
+            view_all: 'Wo Gbogbo Iṣẹ́',
+            cta_title: 'Jẹ́ Ká Ṣe Nkan Tó Dára Papọ̀!',
+            cta_desc: 'Ṣé o ní èrò? Jẹ́ ká sọ̀rọ̀ kí á sì kọ́ nkan tó dára.',
+            contact_label: 'Ìkànsí àti Ìsọfúnni', contact_title: 'Kan Sí Mi',
+            contact_desc: 'Máṣe ṣàníyàn láti kan sí mi fún ibeere eyikeyi tabi ìfọwọ́sowọ́pọ̀!'
+        }
+    };
+
+    function changeLanguage(lang) {
+        localStorage.setItem('preferredLang', lang);
+        const t = translations[lang] || translations['en'];
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (t[key] !== undefined) el.textContent = t[key];
+        });
+    }
+
+    // Auto-detect browser language on load
+    function initLanguage() {
+        const saved = localStorage.getItem('preferredLang');
+        const browserLang = (navigator.language || navigator.userLanguage || 'en').substring(0, 2).toLowerCase();
+        const supported = ['en', 'es', 'fr', 'yo'];
+        const lang = saved || (supported.includes(browserLang) ? browserLang : 'en');
+        const sel = document.getElementById('lang-select');
+        if (sel) sel.value = lang;
+        changeLanguage(lang);
+    }
+
+    document.addEventListener('DOMContentLoaded', initLanguage);
+    </script>
+
+</body>
+</html>
