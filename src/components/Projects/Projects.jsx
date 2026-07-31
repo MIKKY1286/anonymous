@@ -19,6 +19,8 @@ const ProjectsSection = () => {
     return project.category === filter || project.subCategory === filter;
   });
 
+  const displayedProjects = filteredProjects.slice(0, 4);
+
   return (
     <section 
       id="project" 
@@ -72,7 +74,7 @@ const ProjectsSection = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project) => (
+            {displayedProjects.map((project) => (
               <motion.div
                 layout
                 key={project.id}

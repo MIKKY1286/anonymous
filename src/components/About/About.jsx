@@ -5,7 +5,7 @@ import { useLanguage } from '../../context/LanguageContext';
 import Button from '../UI/Button';
 import Card from '../UI/Card';
 import Heading from '../UI/Heading';
-import avatarImg from '../../assets/web-developer-digital-avatar.jpg';
+import avatarImg from '../../assets/michaeloliyide.jpg';
 
 const About = () => {
   const { t } = useLanguage();

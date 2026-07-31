@@ -4,7 +4,7 @@ import CountUp from 'react-countup';
 import { FiArrowRight, FiDownload } from 'react-icons/fi';
 import { useLanguage } from '../../context/LanguageContext';
 import Button from '../UI/Button';
-import avatarImg from '../../assets/web-developer-digital-avatar.jpg';
+import avatarImg from '../../assets/michaeloliyide.jpg';
 import heroIllustration from '../../assets/WhatsApp_Image-removebg-preview.png';
 
 const Hero = () => {
